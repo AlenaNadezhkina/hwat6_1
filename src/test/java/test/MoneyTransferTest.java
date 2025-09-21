@@ -1,6 +1,7 @@
 package test;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import data.DataHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,6 +33,7 @@ public class MoneyTransferTest {
         secondardInfo = DataHelper.getSecondCardInfo();
         firstCardBalance = dashboardPage.getCardBalance(firstCardInfo);
         secondCardBalance = dashboardPage.getCardBalance(secondardInfo);
+        Selenide.open("http://localhost:9999");
     }
 
     @Test
