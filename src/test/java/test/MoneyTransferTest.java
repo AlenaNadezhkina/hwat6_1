@@ -23,8 +23,6 @@ public class MoneyTransferTest {
 
     @BeforeEach
     void setup() {
-        Configuration.headless = true;
-        Configuration.holdBrowserOpen = true;
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authinfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authinfo);
@@ -34,8 +32,6 @@ public class MoneyTransferTest {
         secondardInfo = DataHelper.getSecondCardInfo();
         firstCardBalance = dashboardPage.getCardBalance(firstCardInfo);
         secondCardBalance = dashboardPage.getCardBalance(secondardInfo);
-        Configuration.headless = true;
-        Configuration.holdBrowserOpen = true;
     }
 
     @Test
